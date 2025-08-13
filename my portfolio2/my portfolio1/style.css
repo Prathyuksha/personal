@@ -1,0 +1,221 @@
+:root {
+      --main-bg: #f5f7fa;
+      --accent: #133369;
+      --primary: #2176ff;
+      --card-bg: #fff;
+      --shadow: 0 2px 16px rgba(33,119,255,0.09);
+      --radius: 18px;
+    }
+    body {
+      margin: 0;
+      color: #253048;
+      background: var(--main-bg);
+      font-family: 'Segoe UI', 'Poppins', Arial, sans-serif;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(120deg, var(--accent) 70%, var(--primary) 100%);
+      padding: 30px 5vw 18px 5vw;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      color: #fff;
+      border-bottom-left-radius: var(--radius);
+      border-bottom-right-radius: var(--radius);
+      gap: 24px;
+    }
+    .hero-text {
+      flex: 1 1 280px;
+      min-width: 220px;
+      padding-right: 24px;
+      animation: fadeInLeft 1s;
+    }
+    .hero-text h1 {font-size: 2.2rem;margin-bottom:6px;}
+    .hero-text p {font-size:1.07rem;}
+    .profile-img {
+      width: 145px;
+      height: 145px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: var(--shadow);
+      border: 5px solid #fff;
+      animation: fadeInRight 1.2s;
+    }
+    nav {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin: 28px 0 18px 0;
+      flex-wrap: wrap;
+    }
+    .menu-btn {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 9px;
+      padding: 9px 22px;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 2px 7px rgba(33,119,255,0.10);
+      transition: background .25s;
+    }
+    .menu-btn.active, .menu-btn:hover {
+      background: var(--accent);
+    }
+    .section {
+      margin: 0 auto 24px auto;
+      width: 96%;
+      max-width: 900px;
+      padding: 24px 8px;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      display: none;
+      animation: fadeInUp .7s;
+    }
+    .section.active { display: block; }
+    .section h2 {
+      text-align: left;
+      margin-bottom: 24px;
+      color: var(--accent);
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 22px;
+    }
+    .card {
+      background: #f8fafc;
+      border-radius: 12px;
+      box-shadow: 0 2px 9px rgba(33,119,255,0.07);
+      padding: 18px 14px;
+      transition: box-shadow .20s, transform .2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .card:hover {
+      box-shadow: 0 7px 28px rgba(33,119,255,0.15);
+      transform: scale(1.04);
+    }
+    .card strong {
+      font-weight: 600;
+      color: var(--primary);
+      display: block;
+      margin-bottom: 7px;
+    }
+    .card .icon {
+      font-size: 1.7rem;
+      position: absolute;
+      top: 13px;
+      right: 15px;
+      opacity: 0.12;
+      pointer-events: none;
+      transition: opacity .2s;
+    }
+    .card:hover .icon {opacity: .30;}
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.chip {
+    background: var(--primary);
+    color: #fff;
+    padding: 7px 16px;
+    border-radius: 18px;
+    font-size: 0.99rem;
+    box-shadow: 0 1px 6px rgba(33,119,255,0.10);
+    cursor: default;
+    display: flex;
+    align-items: center;
+    transition: background .22s;
+    margin-bottom: 4px;
+}
+
+.chip img {
+    height: 24px;   /* You can use 20px, 28px, etc. */
+    width: auto;
+    vertical-align: middle;
+    margin-right: 8px;
+    display: inline-block;
+    object-fit: contain;
+}
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 390px;
+      margin: 0 auto;
+      padding-top:18px;
+    }
+    .contact-form input, .contact-form textarea {
+      padding: 11px;
+      border-radius: 8px;
+      border: 1px solid #cee0fa;
+      font-size: 1rem;
+      background: #f4f7fb;
+      box-shadow: 0 2px 8px rgba(33,119,255,0.03);
+      transition: border-color .18s;
+    }
+    .contact-form button {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 22px;
+      font-size: 1.05rem;
+      cursor: pointer;
+      transition: background .23s;
+      margin-top: 6px;
+    }
+    .contact-form button:hover { background: var(--primary);}
+    .social-links {
+      margin-top: 28px;
+      text-align: center;
+      font-size: 1.5rem;
+      color: var(--accent);
+      display: flex;
+      gap: 18px;
+      justify-content: center;
+    }
+    .social-links a {
+      text-decoration: none;
+      color: var(--accent);
+      transition: color .18s, transform .15s;
+    }
+    .social-links a:hover {color: var(--primary);transform: scale(1.2);}
+    @media (max-width: 750px) {
+      header {
+        flex-direction: column-reverse;
+        align-items: center;
+        padding-bottom: 28px;
+      }
+      .hero-text {padding-right:0;}
+      .profile-img { margin-bottom:16px;}
+      nav { gap: 9px; flex-wrap: wrap;}
+      .section {padding: 13px 3vw;}
+      .card-grid {grid-template-columns: 1fr;}
+    }
+    @keyframes fadeInLeft {
+      from { opacity:0; transform:translateX(-50px);}
+      to { opacity:1; transform:translateX(0);}
+    }
+    @keyframes fadeInRight {
+      from { opacity:0; transform:translateX(60px);}
+      to { opacity:1; transform:translateX(0);}
+    }
+    @keyframes fadeInUp {
+      from { opacity:0; transform:translateY(40px);}
+      to { opacity:1; transform:translateY(0);}
+    }
+    .card .icon img {
+      width: 34px;
+      height: 34px;
+      opacity: 0.18;
+    }
+    .card:hover .icon img { opacity: 0.34;}
